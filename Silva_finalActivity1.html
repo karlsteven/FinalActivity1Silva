@@ -1,0 +1,87 @@
+<!--Modify your final activity 1 to accept student id number, student firstname, student lastname, and student grade. If the student grade is odd, display it in RED color as well as "Passed or Failed". If the student grade is even, display it in BLUE color as well as "Passed or Failed".-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Passed or Failed</title>
+<style>
+body{
+	background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+p {
+	font-style: times;
+	font-size: 25px;
+	color: black;
+}
+
+</style>
+</head>
+<body>
+<table border="3" align="center">
+	<tr>
+		<td><p id="first"></p></td>
+	</tr>
+	<tr>
+		<td><p id="last"></p></td>
+	</tr>
+	<tr>
+		<td><p id="id"></p></td>
+	</tr>
+	<tr>
+		<td>
+			<p id="demo1" style="color: blue;"></p>
+			<p id="demo2" style="color: red;"></p>
+			<p id="demo3"></p>
+		</td>
+	</tr>
+</table>
+	<script>
+	var sID = prompt("Enter Your Id number");
+	var first = prompt("Enter Your Firstname");
+	var last = prompt("Enter Your Lastname");
+	var grade = prompt("Enter Your Grade (1 - 5 collage grade system)");
+	document.getElementById('id').innerHTML = "Student ID number: " + sID;
+	document.getElementById('first').innerHTML = "Student Firstname: " + first;
+	document.getElementById('last').innerHTML = "Student Lastname: " + last;
+	determine(grade);
+	function determine(grade)
+	{
+		if (grade>=1&&grade<=5) 
+		{
+			if (grade>=1&&grade<=3) 
+				{
+					if (grade%2==0)
+			{
+				return document.getElementById('demo1').innerHTML = "Your Grade is "+grade+" YOU PASSED";
+			}
+				else
+			{
+			return document.getElementById('demo2').innerHTML = "Your Grade is "+grade+" YOU PASSED";
+			}
+				}
+			else
+				{
+					if (grade%2==0)
+			{
+				return document.getElementById('demo1').innerHTML = "Your Grade is "+grade+" YOU FAILED";
+			}
+				else
+			{
+			return document.getElementById('demo2').innerHTML = "Your Grade is "+grade+" YOU FAILED";
+			}
+				}
+		}
+		else
+		{
+			return document.getElementById('demo3').innerHTML = "You input Grade is invalid";
+		}
+		
+	}
+
+
+
+	</script>
+
+</body>
+</html>
